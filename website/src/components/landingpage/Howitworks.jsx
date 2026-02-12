@@ -265,13 +265,17 @@ export default function HowItWorks() {
     >
       <div className="pb-16 text-center">
         <h2
-          style={{ fontSize: "48px", fontWeight: "600", marginBottom: "20px" }}
+          style={{
+            fontSize: is2XL ? "48px" : "32px",
+            fontWeight: "600",
+            marginBottom: "20px",
+          }}
         >
           How It Works
         </h2>
         <p
           style={{
-            fontSize: "20px",
+            fontSize: is2XL ? "20px" : "16px",
             color: "#666",
             maxWidth: "830px",
             lineHeight: "1.4",

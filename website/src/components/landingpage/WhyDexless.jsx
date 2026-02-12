@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "@orderly.network/hooks";
 
 const FEATURES = [
   {
@@ -36,6 +37,8 @@ const FEATURES = [
 ];
 
 export default function WhyDexless() {
+  const isLG = useMediaQuery("(min-width: 768px)");
+
   return (
     <section
       className="relative bg-cover bg-center text-black flex justify-center"
@@ -51,15 +54,30 @@ export default function WhyDexless() {
           className="space-y-4 flex flex-col items-center text-center"
           style={{ paddingTop: "120px", paddingBottom: "120px" }}
         >
-          <h2 className="text-6xl">Why Dexless?</h2>
+          <h2
+            style={{
+              fontSize: isLG ? "56px" : "32px",
+              fontWeight: "600",
+            }}
+          >
+            Why Dexless?
+          </h2>
+
           <p
-            className="text-2xl"
-            style={{ maxWidth: "650px", fontWeight: "400", color: "#666" }}
+            style={{
+              fontSize: isLG ? "22px" : "14px",
+              maxWidth: "650px",
+              fontWeight: "400",
+              color: "#666",
+              paddingRight:"20px",
+              paddingLeft:"20px"
+            }}
           >
             Trading platforms shouldn’t just execute trades — they should help
             traders understand, improve, and evolve.
           </p>
         </div>
+
         <div
           className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2"
           style={{
@@ -80,13 +98,11 @@ export default function WhyDexless() {
                 boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
               }}
             >
-              {/* 上半部：放置 3D 圖片 */}
               <div
                 style={{
                   flex: 1.2,
                   background: item.bgColor,
                   backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -100,12 +116,10 @@ export default function WhyDexless() {
                     width: "188px",
                     height: "250px",
                     objectFit: "contain",
-                    filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.1))",
                   }}
                 />
               </div>
 
-              {/* 下半部：內容區 */}
               <div
                 style={{
                   padding: "24px",
@@ -118,7 +132,7 @@ export default function WhyDexless() {
               >
                 <h3
                   style={{
-                    fontSize: "20px",
+                    fontSize: isLG ? "20px" : "16px",
                     fontWeight: "bold",
                     lineHeight: "1.3",
                     marginBottom: "12px",
@@ -126,9 +140,10 @@ export default function WhyDexless() {
                 >
                   {item.title}
                 </h3>
+
                 <p
                   style={{
-                    fontSize: "14px",
+                    fontSize: isLG ? "14px" : "12px",
                     color: "rgba(0,0,0,0.6)",
                     lineHeight: "1.5",
                   }}

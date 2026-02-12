@@ -1,6 +1,10 @@
 import React from "react";
+import { useMediaQuery } from "@orderly.network/hooks";
 
 export default function SecurityAndRisk() {
+  const isLG = useMediaQuery("(min-width: 1024px)");
+  
+
   const steps = [
     {
       img: "/images/landingpage/settlement1.png",
@@ -33,7 +37,7 @@ export default function SecurityAndRisk() {
       <div className="pb-10">
         <p
           style={{
-            fontSize: "48px",
+            fontSize: isLG ? "48px" : "32px",
             fontWeight: "600",
             lineHeight: "1.1",
             paddingBottom: "24px",
@@ -44,7 +48,7 @@ export default function SecurityAndRisk() {
         </p>
         <p
           style={{
-            fontSize: "30px",
+            fontSize: isLG ? "30px" : "22px",
             fontWeight: "500",
             maxWidth: "830px",
           }}
@@ -53,7 +57,7 @@ export default function SecurityAndRisk() {
         </p>
         <p
           style={{
-            fontSize: "20px",
+            fontSize: isLG ? "20px" : "14px",
             fontWeight: "400",
             color: "#666",
           }}

@@ -2,10 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import { useMarketsStream } from "@orderly.network/hooks";
 import { generatePath } from "@orderly.network/i18n";
+import { useMediaQuery } from "@orderly.network/hooks";
 
 export default function Markets() {
   const navigate = useNavigate();
-  
+  const isLG = useMediaQuery("(min-width: 1024px)");
+
   // 取得 Orderly 即時市場資訊
   const { data: markets } = useMarketsStream();
 
@@ -55,8 +57,19 @@ export default function Markets() {
     >
       <div className="w-full max-w-7xl px-4">
         {/* 標題區 */}
-        <p className="text-6xl font-medium">Markets</p>
-        <p className="text-2xl py-4 text-[#666]">
+        <h2 className="text-6xl font-medium"  
+        style={{
+          fontSize: isLG ? "56px" : "32px",
+          fontWeight: "600",
+        }}>
+          Markets
+        </h2>
+        <p 
+          className="text-2xl py-4 text-[#666]"
+          style={{
+            fontSize: isLG ? "24px" : "16px",
+          }}
+        >
           Perpetual Markets Available
         </p>
 
@@ -86,7 +99,7 @@ export default function Markets() {
               >
                 {/* 幣種與標籤 */}
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl font-bold">{market.symbol}</span>
+                  <span className="text-2xl font-bold" style={{fontSize: isLG ? "" : "14px",}}>{market.symbol}</span>
                   <span
                     className="text-[10px] text-white px-3 py-1 rounded-full font-bold"
                     style={{ background: "linear-gradient(90deg, #7b61ff, #b4e391)" }}
@@ -98,8 +111,13 @@ export default function Markets() {
                 {/* 價格與漲跌 */}
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-4xl font-bold mb-4">{market.price}</p>
-                    <span className="px-4 py-1 bg-gray-50 rounded-lg border border-gray-100 text-sm font-medium">
+                    <p 
+                      className="text-4xl font-bold mb-4"
+                      style={{fontSize: isLG ? "36px" : "28px",}}
+                    >
+                      {market.price}
+                    </p>
+                    <span className="px-4 py-1 bg-gray-50 rounded-lg border border-gray-200 text-sm font-medium">
                       {market.change}
                     </span>
                   </div>
