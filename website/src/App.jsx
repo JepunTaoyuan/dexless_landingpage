@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import Hero from './components/landingpage/Hero';
 import WhyDexless from './components/landingpage/WhyDexless';
-import HowItWorks from './components/landingpage/HowItWorks';
+import HowItWorks from './components/landingpage/Howitworks';
 import Markets from './components/landingpage/Markets';
 import SecurityAndRisk from './components/landingpage/SecurityAndRisk';
 import RiskDisclosure from './components/landingpage/RiskDisclosure';
