@@ -9,7 +9,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
     nodePolyfills({
-      // 確保在瀏覽器環境中模擬 Node.js 全域變數
       globals: {
         Buffer: true, 
         global: true,
@@ -22,15 +21,12 @@ export default defineConfig({
       '@orderly.network/hooks',
       '@orderly.network/ui',
       '@orderly.network/i18n',
-      // 如果還有 Buffer 報錯，通常也建議把這幾個加入
       '@orderly.network/core',
       '@orderly.network/component-id-auth',
     ],
   },
-  // 針對某些加密套件可能需要的解析配置
   resolve: {
     alias: {
-      // 確保指向正確的 buffer 實作
       buffer: 'buffer',
     },
   },

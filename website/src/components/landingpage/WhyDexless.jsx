@@ -4,8 +4,7 @@ const FEATURES = [
   {
     title: "Data Ownership by Traders",
     desc: "Users retain access to their full trading history — not limited by platform policies.",
-    color: "#d4f7a3", // 下半部實色
-    // 修正：使用線性漸層，模擬從左上往右下的虹彩光感
+    color: "#d4f7a3",
     bgColor:
       "linear-gradient(212deg, rgba(255, 255, 255, 0.08) 0%, rgba(236.61, 236.61, 236.61, 0.22) 17%, rgba(186, 247, 120, 0.40) 36%, rgba(155, 241, 189, 0.40) 60%, rgba(230.48, 230.48, 230.48, 0.28) 86%, rgba(231.71, 231.71, 231.71, 0.16) 100%)",
     url: "/images/landingpage/trader.png",
@@ -75,7 +74,7 @@ export default function WhyDexless() {
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
-                height: "480px", // 設定固定高度
+                height: "480px",
                 width: "350px",
                 border: "1px solid rgba(255,255,255,0.4)",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
